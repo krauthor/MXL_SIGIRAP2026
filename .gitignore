@@ -1,0 +1,42 @@
+# Environments / tooling
+venv
+.venv
+.venv/*
+.vscode/*
+.python-version
+.env
+.env.example
+.claude/*
+**/__pycache__/
+
+# Datasets (downloaded or generated)
+*.npz
+*/ContentWiseImpressions/*
+*/DHRD/*
+data/ContentWise*
+
+# Experiment outputs
+*/results/*
+*/hyperparameter_optimization_results/*
+data/benchmark_results/*
+*/plots/*
+!data/plots/figure_restaurant_example_embs.pdf
+!data/plots/figure_restaurant_example_embs.png
+!data/plots/training_timing_plot.png
+!data/plots/slate_generation_timing_plot.png
+!data/plots/Synthetic_true_embedding_plot.png
+!data/plots/Synthetic_estimated_embedding_plot_hard_negatives.png
+!data/plots/Synthetic_estimated_embedding_plot_sampled_negatives.png
+data/evaluation_commands/*
+data/hyperparameter_grids/*/commands_*.txt
+data/paper_tables/
+
+# Cluster run artifacts
+logs/*
+benchmark_*.log
+huge_*.log
+diag_*.log
+vram_*.log
+
+# Archived earlier result sets
+data/archive_*/

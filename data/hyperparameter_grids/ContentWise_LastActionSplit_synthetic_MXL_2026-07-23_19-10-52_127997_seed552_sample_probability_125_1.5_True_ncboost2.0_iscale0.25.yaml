@@ -1,0 +1,53 @@
+Shared:
+  --dataset_name: ["ContentWise_LastActionSplit_synthetic_MXL_2026-07-23_19-10-52_127997_seed552_sample_probability_125_1.5_True_ncboost2.0_iscale0.25"]
+  --seed: [52]
+  --no-store_trained_model: [null]
+  --optimize_hyperparams: [null]
+  --num_epochs: [500]
+  --num_early_stopping: [20]
+  --batch_size: [128]
+  --max_training_time_sec: [3600]
+
+MXL:
+  --model_name: ["MXL"]
+  --learning_rate: [0.001]
+  --temperature: [1.0]
+  --out_dim: [128, 256, 512]
+  --l2_weight: [0.01, 0.001, 0.0001, 0]
+  --num_prior_samples: [512]
+  --beta_max: [0.04, 0.08, 0.16]
+  --l2_num_prior_samples: [128]
+  --optimizer: ["adam"]
+  --has_intercept: [null]
+  --use_output_layer_norm: [null]
+
+MNL:
+  --model_name: ["MNL"]
+  --learning_rate: [0.001]
+  --out_dim: [256, 512, 1024]
+  --l2_weight: [1.0, 0.1, 0.01, 0.001, 0.0001]
+  --optimizer: ["adam"]
+  --has_intercept: [null]
+
+MNL_Multi:
+  --model_name: ["MNL_Multi"]
+  --learning_rate: [0.001]
+  --out_dim: [256, 512, 1024]
+  --l2_weight: [1.0, 0.1, 0.01, 0.001, 0.0001]
+  --num_embs: [2, 4, 8]
+  --optimizer: ["adam"]
+  --has_intercept: [null]
+
+MNL_Max:
+  --model_name: ["MNL_Max"]
+  --learning_rate: [0.001]
+  --out_dim: [256, 512, 1024]
+  --l2_weight: [1.0, 0.1, 0.01, 0.001, 0.0001]
+  --num_embs: [2, 4, 8]
+  --optimizer: ["adam"]
+  --has_intercept: [null]
+
+Intercept:
+  --model_name: ["Intercept"]
+  --learning_rate: [0.1, 0.01, 0.001, 0.0001]
+  --optimizer: ["sgd", "adam"]

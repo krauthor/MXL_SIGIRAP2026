@@ -1,0 +1,28 @@
+shared:
+  dataset_name: "ContentWise_LastActionSplit"
+  out_dim: 512
+  batch_size: 1024
+  learning_rate: 0.001
+  has_intercept: true
+  num_warmup_batches: 20
+  num_timed_batches: 50
+
+models:
+  MNL:
+    model_name: "MNL"
+    l2_weight: 0.0001
+
+mxl_sweep:
+  cov_configs:
+    - cov_type: "diag"
+      cov_rank: [0]
+      l2_weight: 0.0001
+    - cov_type: "aat"
+      cov_rank: [4, 8, 16, 64]
+      l2_weight: 0
+    - cov_type: "aat_shared"
+      cov_rank: [4, 8, 16, 64]
+      l2_weight: 0
+  num_prior_samples: 512
+  beta_max: 0.04
+  l2_num_prior_samples: 128
